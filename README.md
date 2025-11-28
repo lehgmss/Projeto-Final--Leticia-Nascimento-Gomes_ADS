@@ -1,1 +1,48 @@
-🦷 Projeto Final: Sistema de Gerenciamento Odonto Vida🎓 Disciplina e ContextoEste projeto representa o TRABALHO FINAL da disciplina de Técnicas de Desenvolvimento de Algoritmos (TDA).O objetivo principal deste sistema é aplicar os conceitos de lógica de programação, estruturas de dados e organização algorítmica na construção de um sistema CRUD (Create, Read, Update, Delete) completo para uma clínica odontológica.💻 Sobre o SistemaO Odonto Vida é um sistema web básico desenvolvido em PHP e MySQL para a gestão de registros de pacientes, dentistas, especialidades e consultas. Ele demonstra a aplicação de algoritmos de manipulação de dados para gerenciar informações persistentes em um banco de dados relacional.Tecnologias UtilizadasBack-end: PHP (Lógica e Manipulação de Dados)Banco de Dados: MySQL/MariaDB (clinica7 via XAMPP)Front-end: HTML, CSS e Bootstrap (Para interface responsiva)📋 Arquivos de Documentação e Análise AlgorítmicaConforme as exigências da disciplina, os seguintes documentos que detalham a lógica e os algoritmos do sistema foram gerados:ArquivoDescriçãodocs_pseudocodigo.mdPseudocódigo detalhado dos principais algoritmos de CRUD (Cadastro, Edição e Exclusão).docs_fluxograma.mdRepresentação visual (Fluxograma) dos processos lógicos do sistema.docs_algoritmo.mdDescrição técnica dos algoritmos utilizados.🛠️ Como Iniciar (Setup)Para rodar o projeto localmente, siga estes passos:Certifique-se de ter o XAMPP instalado e em funcionamento.Crie o banco de dados chamado clinica7 no phpMyAdmin.Copie todos os arquivos do projeto para a pasta htdocs/odonto_vida/ dentro do seu diretório XAMPP.Acesse no navegador: http://localhost/odonto_vida/index.php
+# 🦷 Projeto Final – Sistema de Gerenciamento **Odonto Vida**
+
+## 🎓 Disciplina e Contexto
+Este projeto representa o **Trabalho Final** da disciplina de **Técnicas de Desenvolvimento de Algoritmos (TDA)**.
+
+O objetivo principal é aplicar conceitos de:
+- Lógica de programação  
+- Estruturas de dados  
+- Organização algorítmica  
+
+Tudo isso na construção de um sistema **CRUD completo** para gerenciamento de uma clínica odontológica.
+
+---
+
+## 💻 Sobre o Sistema
+
+O **Odonto Vida** é um sistema web básico desenvolvido em **PHP** e **MySQL**, utilizado para gerenciar:
+
+- Pacientes  
+- Dentistas  
+- Especialidades  
+- Consultas  
+
+O sistema demonstra a aplicação de algoritmos para manipulação e persistência de dados em um banco relacional.
+
+### 🔧 Tecnologias Utilizadas
+- **Back-end:** PHP  
+- **Banco de Dados:** MySQL/MariaDB (via XAMPP – banco *clinica7*)  
+- **Front-end:** HTML, CSS e Bootstrap  
+
+---
+
+## 📋 Documentação do Projeto
+
+Os seguintes arquivos de documentação foram produzidos conforme exigência da disciplina:
+
+| Arquivo | Descrição |
+|--------|-----------|
+| **docs_pseudocodigo.md** | Pseudocódigo detalhado dos principais algoritmos CRUD. |
+| **docs_fluxograma.md** | Fluxograma completo dos processos lógicos do sistema. |
+| **docs_algoritmo.md** | Descrição formal e algoritmos utilizados no sistema. |
+
+---
+
+## 🛠️ Como Executar o Projeto (Setup)
+
+1. Instale e abra o **XAMPP**.  
+2. No phpMyAdmin, crie o banco de dados:  
