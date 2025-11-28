@@ -45,4 +45,8 @@ Os seguintes arquivos de documentação foram produzidos conforme exigência da 
 ## 🛠️ Como Executar o Projeto (Setup)
 
 1. Instale e abra o **XAMPP**.  
-2. No phpMyAdmin, crie o banco de dados:  
+2. No phpMyAdmin, crie o banco de dados:  clinica7
+3. Coloque os arquivos do projeto na pasta: htdocs/odonto_vida/
+4. Inicie Apache e MySQL no XAMPP.  
+5. Acesse no navegador:  http://localhost/odonto_vida/index.php
+
