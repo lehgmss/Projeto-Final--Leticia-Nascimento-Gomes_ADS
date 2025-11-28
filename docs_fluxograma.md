@@ -1,55 +1,62 @@
-# Fluxograma (Mermaid) - Sistema Odonto Vida
+# 📊 Fluxograma – Sistema Odonto Vida (CRUD)
 
-## Fluxograma Geral das Operações CRUD
+A seguir estão os fluxogramas do sistema, representando os processos de Pacientes e Consultas.
 
-```mermaid
-flowchart TD
-  A[Início - Requisição do Usuário] --> B{Requisição}
-  B -->|Criar Paciente| C1[Form: preencher nome, telefone, email]
-  C1 --> D1[Validar dados]
-  D1 -->|Válido| E1[Executar INSERT INTO pacientes]
-  D1 -->|Inválido| F1[Mostrar erro]
+---
 
-  B -->|Listar Pacientes| G1[Executar SELECT * FROM pacientes]
-  G1 --> H1[Mostrar tabela de pacientes]
-
-  B -->|Excluir Paciente| I1[Receber id do paciente]
-  I1 --> J1[Executar DELETE FROM pacientes WHERE id=...]
-  J1 --> K1[Atualizar lista]
-
-  B -->|Criar Consulta| C2[Form: data, descrição, selecionar paciente]
-  C2 --> D2[Validar dados]
-  D2 -->|Válido| E2[Executar INSERT INTO consultas]
-  D2 -->|Inválido| F2[Mostrar erro]
-
-  B -->|Listar Consultas| G2[Executar SELECT JOIN pacientes]
-  G2 --> H2[Mostrar tabela de consultas]
-
-  E1 --> Z[Fim - Sucesso]
-  J1 --> Z
-  E2 --> Z
-```
-
-## Fluxograma - Detalhado: Criação de Paciente
+## 🧩 Fluxograma Geral do Sistema (CRUD)
 
 ```mermaid
 flowchart TD
-  A[Começar] --> B[Usuário envia formulário de paciente]
-  B --> C{Campos preenchidos?}
-  C -->|Não| D[Mostrar mensagem: "Preencha todos os campos"]
-  C -->|Sim| E[Executar INSERT no banco]
-  E --> F[Redirecionar para pagina de pacientes]
-  F --> G[Fim]
-```
+    A[Início] --> B[Usuário seleciona operação]
 
-## Fluxograma - Detalhado: Criação de Consulta
+    B --> C{Operação escolhida?}
 
-```mermaid
-flowchart TD
-  A[Começar] --> B[Usuário envia formulário de consulta]
-  B --> C{Campos preenchidos e paciente selecionado?}
-  C -->|Não| D[Mostrar erro]
-  C -->|Sim| E[Executar INSERT em consultas]
-  E --> F[Redirecionar para pagina de consultas]
-  F --> G[Fim]
-```
+    C -->|Cadastrar Paciente| CP[Formulário de Cadastro de Paciente]
+    C -->|Listar Pacientes| LP[Listar registros da tabela Pacientes]
+    C -->|Atualizar Paciente| AP[Formulário de Edição]
+    C -->|Excluir Paciente| EP[Selecionar Paciente para Exclusão]
+
+    C -->|Cadastrar Consulta| CC[Formulário de Cadastro de Consulta]
+    C -->|Listar Consultas| LC[Listar registros da tabela Consultas]
+    C -->|Atualizar Consulta| AC[Formulário de Edição de Consulta]
+    C -->|Excluir Consulta| EC[Selecionar Consulta para Exclusão]
+
+    %% ------- PACIENTES --------
+
+    CP --> VCP{Dados válidos?}
+    VCP -->|Não| ECP[Exibir mensagem de erro]
+    VCP -->|Sim| ICP[INSERT no banco → tabela pacientes]
+    ICP --> FIM[Fim]
+
+    LP --> FIM
+
+    AP --> VAP{Dados válidos?}
+    VAP -->|Não| EAP[Erro na atualização]
+    VAP -->|Sim| UAP[UPDATE pacientes]
+    UAP --> FIM
+
+    EP --> DEP{Paciente existe?}
+    DEP -->|Não| EEP[Erro: paciente não encontrado]
+    DEP -->|Sim| REP[DELETE pacientes]
+    REP --> FIM
+
+    %% ------- CONSULTAS --------
+
+    CC --> VCC{Dados válidos?}
+    VCC -->|Não| ECC[Erro no cadastro]
+    VCC -->|Sim| ICC[INSERT consultas]
+    ICC --> FIM
+
+    LC --> FIM
+
+    AC --> VAC{Dados válidos?}
+    VAC -->|Não| EAC[Erro na atualização]
+    VAC -->|Sim| UAC[UPDATE consultas]
+    UAC --> FIM
+
+    EC --> DEC{Consulta existe?}
+    DEC -->|Não| EEC[Erro: consulta não encontrada]
+    DEC -->|Sim| REC[DELETE consultas]
+    REC --> FIM
+
